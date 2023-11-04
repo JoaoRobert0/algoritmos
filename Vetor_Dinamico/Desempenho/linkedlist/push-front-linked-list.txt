@@ -1,0 +1,14 @@
+$ ./test-pushfront-linked-list-01 < tests/push/e1.txt
+[INFO] Elapsed time for 5 pushes front :0
+
+$ ./test-pushfront-linked-list-01 < tests/push/e2.txt
+[INFO] Elapsed time for 10 pushes front :0
+
+$ ./test-pushfront-linked-list-01 < tests/push/e3.txt
+[INFO] Elapsed time for 1000 pushes front :1010000
+
+$ ./test-pushfront-linked-list-01 < tests/push/e4.txt
+[INFO] Elapsed time for 2000 pushes front :2015000
+
+$ ./test-pushfront-linked-list-01 < tests/push/e5.txt
+[INFO] Elapsed time for 3000 pushes front :2023000

@@ -5,10 +5,10 @@ $ ./test-pushfront-array-list-01 < tests/push/e2.txt
 [INFO] Elapsed time for 10 pushes front :0
 
 $ ./test-pushfront-array-list-01 < tests/push/e3.txt
-[INFO] Elapsed time for 1000 pushes front :2000000
+[INFO] Elapsed time for 1000 pushes front :2258000
 
 $ ./test-pushfront-array-list-01 < tests/push/e4.txt
-[INFO] Elapsed time for 2000 pushes front :7695000
+[INFO] Elapsed time for 2000 pushes front :6432000
 
 $ ./test-pushfront-array-list-01 < tests/push/e5.txt
-[INFO] Elapsed time for 3000 pushes front :15416000
+[INFO] Elapsed time for 3000 pushes front :11644000
