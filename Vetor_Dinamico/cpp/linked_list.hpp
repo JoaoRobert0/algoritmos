@@ -1,6 +1,7 @@
 #ifndef __LINKED_LIST_IFRN__
 #define __LINKED_LIST_IFRN__
 
+using namespace std;
 
 class linked_list {
 private:
@@ -24,6 +25,7 @@ public:
             current = current->next;
             delete to_remove;
         }
+        size_ = 0;
     }
     
     unsigned int size() { return size_; } //Return the current size of the list. O(1); verified
@@ -35,7 +37,7 @@ public:
         return 1;
     }
     
-    bool insert_at(unsigned int index, int value) {
+    bool insert_at(unsigned int index, int value) { //Insert an element at index in the list. O(n); verified
         if (index > size_){ return false; }
         if (index == 0){
             push_front(value);
@@ -51,9 +53,10 @@ public:
         }
         int_node* new_node = new int_node;
         new_node->value = value;
+        new_node->next = current;
         new_node->prev = current->prev;
         new_node->prev->next = new_node;
-        new_node->next->prev = new_node;
+        current->prev = new_node;
         size_++;
         return true;
     }
@@ -88,13 +91,14 @@ public:
         return current->value;
     }
     
-    void clear() { //Remove the all elemets in the list. O(n);
+    void clear() { //Remove the all elemets in the list. O(n); verified
         int_node* current = this->head;
         while (current != nullptr) {
             int_node* to_remove = current;
             current = current->next;
             delete to_remove;
         }
+        size_ = 0;
     }
     
     void push_back(int value) { //Add a element in the last position in the list. O(1); verifeid
@@ -213,7 +217,7 @@ public:
     
     void show() { //Show the list formatted. O(n); verified
         int_node* current = head;
-        if (current == nullptr){
+        if (size_ == 0){
             cout << "NULL <=> NULL" << endl;
             return;
         }
