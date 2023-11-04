@@ -132,25 +132,39 @@ public:
     }
     
     bool pop_back() { //Remove the last element in the list and return if removed. O(1); verified
-        if (size_ > 0){
-        int_node* back_node = tail;
+        if(head == nullptr){ 
+            return false; 
+        }
+        if(head == tail){
+            delete head;
+            head = nullptr; 
+            tail = nullptr; 
+            size_--;
+            return true; 
+        }
         tail = tail->prev;
-        delete back_node;
+        delete tail->next;
         tail->next = nullptr;
         size_--;
         return true;
-        }else { return false; }
     }
     
     bool pop_front() { //Remove the first element in the list and return if removed. O(1); verified
-        if (size_ > 0){
-        int_node* front_node = head;
+        if(head == nullptr){ 
+            return false; 
+        }
+        if(head == tail){
+            delete head;
+            head = nullptr; 
+            tail = nullptr; 
+            size_--;
+            return true; 
+        }
         head = head->next;
-        delete front_node;
+        delete head->prev;
         head->prev = nullptr;
         size_--;
         return true;
-        }else { return false; }
     }
     
     int front() { return head->value; } //Return the first element. O(1); verified
