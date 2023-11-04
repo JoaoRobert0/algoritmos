@@ -1,18 +1,19 @@
 #ifndef __ARRAY_LIST_IFRN__
 #define __ARRAY_LIST_IFRN__
 
+#include <iostream>
 
 class array_list{
 private:
     int* data;
     unsigned int size_, capacity_;
-    void increase_capacity(){ capacity_ = capacity_ * 2; }
+    void increase_capacity(){ capacity_ = capacity_ + 100; }
 
 public:
     array_list(){
-        capacity_ = 8;
+        capacity_ = 100;
         size_ = 0;
-        data = new int[8];
+        data = new int[100];
     }
 
     ~array_list() { delete[] data; }

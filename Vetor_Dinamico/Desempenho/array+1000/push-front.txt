@@ -26,7 +26,7 @@ $ ./test-pushfront-array-list-01 < tests/push/e9.txt
 [INFO] Elapsed time for 50000 pushes front :2840392000
 
 $ ./test-pushfront-array-list-01 < tests/push/e10.txt
-[INFO] Elapsed time for 100000 pushes front :11162276000G
+[INFO] Elapsed time for 100000 pushes front :11162276000
 
 $ ./test-pushfront-array-list-01 < tests/push/e11.txt
 [INFO] Elapsed time for 200000 pushes front :46331743000

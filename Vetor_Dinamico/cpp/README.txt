@@ -50,9 +50,15 @@ enquanto que o no arquivo 'e2.txt', apenas '8' dos '10' são removidos.
 Exemplo de como compilar o arquivo de teste do remove_at em um
 'array_list':
   g++ -Wall -o test-removeat-array-list-01 test-removeat-array-list-01.cpp 
-
+  g++ -Wall -o test-popback-array-list test-popback-array-list.cpp 
+  g++ -Wall -o test-popfront-array-list test-popfront-array-list.cpp 
+  g++ -Wall -o test-popfront-linked-list test-popfront-linked-list.cpp 
+  g++ -Wall -o test-popback-linked-list test-popback-linked-list.cpp 
 Para executar:
   ./test-removeat-array-list-01 < tests/remove_at/e1.txt
+  ./test-popback-array-list < tests/popback/e1.txt
+  ./test-popfront-array-list < tests/pop/e1.txt
+  ./test-popfront-linked-list < tests/pop/e1.txt
 
 
 Faz parte do trabalhar a definição de testes para 
