@@ -14,7 +14,7 @@ public:
         size_ = 0;
         data = new int[8];
     }
-    
+
     ~array_list() { delete[] data; }
     
     unsigned int size() { return size_; }
