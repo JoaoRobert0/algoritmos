@@ -1,7 +1,7 @@
 #ifndef __LINKED_LIST_IFRN__
 #define __LINKED_LIST_IFRN__
 
-using namespace std;
+#include <iostream>
 
 class linked_list {
 private:
@@ -218,19 +218,19 @@ public:
     void show() { //Show the list formatted. O(n); verified
         int_node* current = head;
         if (size_ == 0){
-            cout << "NULL <=> NULL" << endl;
+            std::cout << "NULL <=> NULL" << std::endl;
             return;
         }
-        cout << "NULL <- ";
+        std::cout << "NULL <- ";
         for (int i = 0; i < size_; i++){
             if (i == size_ - 1) {
-                cout << current->value;
+                std::cout << current->value;
                 break;
             }
-            cout << current->value << " <=> ";
+            std::cout << current->value << " <=> ";
             current = current->next;
         }
-        cout << " -> NULL" << endl;
+        std::cout << " -> NULL" << std::endl;
     }
 };
 
