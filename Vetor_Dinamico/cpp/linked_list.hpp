@@ -28,9 +28,9 @@ public:
         size_ = 0;
     }
     
-    unsigned int size() { return size_; } //Return the current size of the list. O(1); verified
+    unsigned int size() { return size_; } //Return the current size of the list. O(1); verifiedS
     
-    unsigned int capacitty() { return size_; } //Return the current size of the list. O(1); verified
+    unsigned int capacity() { return size_; } //Return the current size of the list. O(1); verified
     
     double percent_occupied() { //Return the current capacitty of the list. O(1); verified
         if (size_ == 0) { return 0; }

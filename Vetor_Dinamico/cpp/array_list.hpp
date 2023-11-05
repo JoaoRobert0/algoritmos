@@ -7,13 +7,13 @@ class array_list{
 private:
     int* data;
     unsigned int size_, capacity_;
-    void increase_capacity(){ capacity_ = capacity_ + 100; }
+    void increase_capacity(){ capacity_ = capacity_ * 2; }
 
 public:
     array_list(){
-        capacity_ = 100;
+        capacity_ = 8;
         size_ = 0;
-        data = new int[100];
+        data = new int[8];
     }
 
     ~array_list() { delete[] data; }
@@ -62,7 +62,7 @@ public:
         }
     }
     
-    bool remove_at(unsigned int index){
+    bool remove_at(unsigned int index){ //Remove o elemento no index. O(1);
         if (index >= this->size_)
             return false; // Não removeu
         for (int i = index + 1; i < this->size_; ++i) {
@@ -72,7 +72,7 @@ public:
         return true; // Removeu
     }
     
-    int getat(unsigned int index){ //Retorna o elemento no index, -1 para indice invalido. O(1);
+    int get_at(unsigned int index){ //Retorna o elemento no index, -1 para indice invalido. O(1);
         if (size_ > 0 && index >= 0 && index < size_){ 
             return data[index];
         }
