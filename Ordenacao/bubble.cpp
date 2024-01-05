@@ -21,23 +21,19 @@ int main()
     {
         cout << vetor[i] << " ";
     }
-
     cout << "\n\n";
 
-    int min, aux;
-    for (int i = 0; i < N - 1; i++) //Até o penultimo elemento pois o ultimo estara ordenado
+    for (int i = 0; i < N - 1; i++)
     {
-        min = i; //Menor começa na posição inicial do laço
-        for (int j = i + 1; j < N; j++)
+        for (int j = 0; j < N - 1 - i; j++)
         {
-            if (vetor[j] < vetor[min])
+            if (vetor[j] > vetor[j + 1])
             {
-                min = j;
+                int aux = vetor[j];
+                vetor[j] = vetor[j + 1];
+                vetor[j + 1] = aux;
             }
         }
-        aux = vetor[min];
-        vetor[min] = vetor[i];
-        vetor[i] = aux;
     }
 
     cout << "Lista ordenada crescente: ";

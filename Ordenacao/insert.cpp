@@ -14,12 +14,15 @@ int main()
         cin >> cartas[i];
     }
 
+    cout << "\n";
+
     cout << "Baralho na forma inicial: ";
     for (int i = 0; i < N; i++)
     {
         cout << cartas[i] << " ";
     }
-    cout << "\n";
+
+    cout << "\n\n";
 
     //Insert sort
     for (int i = 1; i < N; i++)
@@ -40,7 +43,6 @@ int main()
     {
         cout << cartas[i] << " ";
     }
-    cout << "\n";
 
     return 0;
 }
