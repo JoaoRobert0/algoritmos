@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-bool labirinto_bt(int labirinto[20][20], int linha, int coluna, int l, int c);
+int labirinto_bt(int labirinto[20][20], int linha, int coluna, int l, int c);
 
 int main()
 {
@@ -17,32 +17,22 @@ int main()
         }
     }
 
-    cout << bool(labirinto_bt(labirinto, linha, coluna, 0, 0)) << endl;
+    cout << labirinto_bt(labirinto, linha, coluna, 0, 0) << endl;
 
     return 0;
 }
 
-bool labirinto_bt(int labirinto[20][20], int linha, int coluna, int l, int c)
+int labirinto_bt(int labirinto[20][20], int linha, int coluna, int l, int c)
 {
-    if (l==-1 || c==-1 || l==linha || c==coluna || labirinto[l][c]!=0)
-        return false;
+    if (l ==- 1 || c == -1 || l == linha || c == coluna || labirinto[l][c] != 0)
+        return 0;
 
-    if (l==linha-1 && c==coluna-1)
-        return true;
+    if (l == linha -1 && c == coluna -1)
+        return 1;
 
     labirinto[l][c] = 9;
-    bool ans = false ;
-
-    ans = labirinto_bt(labirinto, linha, coluna, l+1, c);
-    
-    if (ans == false)
-        ans = labirinto_bt(labirinto, linha, coluna, l, c+1);
-
-    if (ans == false)
-        ans = labirinto_bt(labirinto, linha, coluna, l, c-1);
-
-    if (ans == false)
-        ans = labirinto_bt(labirinto, linha, coluna, l-1, c);
+    int ans = labirinto_bt(labirinto, linha, coluna, l + 1, c) + labirinto_bt(labirinto, linha, coluna, l, c + 1)
+     + labirinto_bt(labirinto, linha, coluna, l, c - 1) + labirinto_bt(labirinto, linha, coluna, l - 1, c);
 
     labirinto[l][c] = 0;
     return ans;
