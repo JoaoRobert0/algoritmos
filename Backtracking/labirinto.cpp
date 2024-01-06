@@ -24,31 +24,26 @@ int main()
 
 bool labirinto_bt(int labirinto[20][20], int linha, int coluna, int l, int c)
 {
-    //Rejeita
-    if (l < 0 || c < 0 || l >= linha || c >= coluna || labirinto[l][c] == 1)
-    {
+    if (l==-1 || c==-1 || l==linha || c==coluna || labirinto[l][c]!=0)
         return false;
-    }
 
-    //Aceita
-    if (l == linha - 1 && c == coluna - 1)
-    {
+    if (l==linha-1 && c==coluna-1)
         return true;
-    }
 
-    //Caminho para baixo
-    if (labirinto_bt(labirinto, linha, coluna, l + 1, c))
-    {
-        return true;
-    }
+    labirinto[l][c] = 9;
+    bool ans = false ;
 
-    //Caminho para direita
-    if (labirinto_bt(labirinto, linha, coluna, l, c + 1))
-    {
-        return true;
-    }
+    ans = labirinto_bt(labirinto, linha, coluna, l+1, c);
+    
+    if (ans == false)
+        ans = labirinto_bt(labirinto, linha, coluna, l, c+1);
 
-    //Final
-    return false;
+    if (ans == false)
+        ans = labirinto_bt(labirinto, linha, coluna, l, c-1);
 
+    if (ans == false)
+        ans = labirinto_bt(labirinto, linha, coluna, l-1, c);
+
+    labirinto[l][c] = 0;
+    return ans;
 }
