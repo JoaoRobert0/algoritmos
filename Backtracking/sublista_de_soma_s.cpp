@@ -21,10 +21,12 @@ int main()
 
 int existe_sublista(int array[], int tamanho, int soma)
 {
-    //Rejeita
-    if (soma < 0 || tamanho == 0) return 0;
     //Aceita
     if (soma == 0) return 1;
+    //Rejeita
+    if (soma < 0 || tamanho == 0) return 0;
     //Chamadas recursivas
-    return existe_sublista(array ,tamanho - 1 ,soma - array[tamanho - 1]) || existe_sublista(array, tamanho - 1, soma);
+    int r1 = existe_sublista(array ,tamanho - 1 ,soma - array[tamanho - 1]);
+    int r2 = existe_sublista(array, tamanho - 1, soma);
+    return r1 + r2;
 }
