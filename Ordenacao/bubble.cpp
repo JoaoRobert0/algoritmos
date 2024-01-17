@@ -42,5 +42,5 @@ int main()
         cout << vetor[i] << " ";
     }
 
-    return 0;
+    return 0;  
 }
