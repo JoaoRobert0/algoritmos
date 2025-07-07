@@ -1,4 +1,4 @@
-# Bem-vindo ao meu repositório de Algoritmos!
+# Bem-vindo ao meu repositório de algoritmos!
 
 Neste repositório, você encontrará uma coleção de códigos, exemplos, e projetos relacionados à disciplina de Algoritmos do meu curso de Análise e Desenvolvimento de Sistemas. Aqui, estou explorando os fundamentos essenciais que impulsionam o mundo da programação e da resolução de problemas computacionais.
 
